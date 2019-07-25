@@ -10,8 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function(){
+    return view('welcome');
+});
 
-Route::get('/', 'PagesController@home');
+Route::get('/my', 'PagesController@home');
 
 Route::get('/contact', 'PagesController@contact');
 
@@ -20,4 +23,9 @@ Route::get('/about', 'PagesController@about');
 Route::resource('/projects','ProjectController');
 
 Route::post('/projects/{project}/tasks','ProjectTasksController@store');
-Route::patch('/tasks/{task}','ProjectTasksController@update');
+//Route::patch('/tasks/{task}','ProjectTasksController@update');
+Route::post('/completed-tasks/{task}','CompletedTasksController@store');
+Route::delete('/completed-tasks/{task}','CompletedTasksController@destroy');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

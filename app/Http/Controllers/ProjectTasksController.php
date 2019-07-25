@@ -8,14 +8,13 @@ use App\Project;
 
 class ProjectTasksController extends Controller
 {
-    public function update(Task $task)
+    /* public function update(Task $task)
     {
-        $task->update(
-                ['completed' => request()->has('completed')]
-                );
+        $method = request()->has('completed')?'complete':'incomplete';
+        $task->$method();
         return back();
     }
-    
+    */
     public function store(Project $project)
     {
         $attributes = request()->validate([

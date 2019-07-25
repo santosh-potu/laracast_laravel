@@ -11,7 +11,7 @@ class PagesController extends Controller
         $tasks = ['task1',
         'task2',
         'task3'];
-    return view('welcome')->with(['tasks'=>$tasks,'foo'=>'foo']);
+    return view('my_welcome')->with(['tasks'=>$tasks,'foo'=>'foo']);
         
     //return view('welcome')->withTasks($tasks)
       //      ->withFoo('foo');
