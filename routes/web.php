@@ -22,7 +22,7 @@ Route::get('/contact', 'PagesController@contact');
 
 Route::get('/about', 'PagesController@about');
 
-Route::resource('/projects','ProjectController')->middleware('can:update,project');
+Route::resource('/projects','ProjectController');//->middleware('can:update,project');
 
 Route::post('/projects/{project}/tasks','ProjectTasksController@store');
 //Route::patch('/tasks/{task}','ProjectTasksController@update');

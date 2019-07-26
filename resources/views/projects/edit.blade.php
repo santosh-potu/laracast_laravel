@@ -22,4 +22,6 @@
                 <button type="submit">Delete Project</button>
             </div>
 </form>
+
+@include("projects.errors")
 @endsection
