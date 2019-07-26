@@ -31,3 +31,10 @@ Route::delete('/completed-tasks/{task}','CompletedTasksController@destroy');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/notify',function(){
+    $user = App\User::first();
+    
+    $user->notify(new App\Notifications\SubscriptionRenewalFailed());
+    return 'Done';
+});
