@@ -15,11 +15,19 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('owner_id');
             $table->string('title');
             $table->text('description');
-            $table->timestamps();
+            $table->timestamps();            
+            
         });
+        
+        Schema::table('projects', function (Blueprint $table) {
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+         });
     }
+    
+    
 
     /**
      * Reverse the migrations.

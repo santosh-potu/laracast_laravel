@@ -14,13 +14,15 @@ Route::get('/', function(){
     return view('welcome');
 });
 
+//Route::get('/signup','HomeController@index')->middleware('guest');
+
 Route::get('/my', 'PagesController@home');
 
 Route::get('/contact', 'PagesController@contact');
 
 Route::get('/about', 'PagesController@about');
 
-Route::resource('/projects','ProjectController');
+Route::resource('/projects','ProjectController')->middleware('can:update,project');
 
 Route::post('/projects/{project}/tasks','ProjectTasksController@store');
 //Route::patch('/tasks/{task}','ProjectTasksController@update');
