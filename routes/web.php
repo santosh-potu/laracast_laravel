@@ -38,3 +38,11 @@ Route::get('/notify',function(){
     $user->notify(new App\Notifications\SubscriptionRenewalFailed());
     return 'Done';
 });
+
+Route::middleware('auth')->post('/teams',function(){
+    $attributes = request()->validate(['name'=>'required']);
+    
+    auth()->user()->team()->create($attributes);
+    
+    return redirect('/');
+});

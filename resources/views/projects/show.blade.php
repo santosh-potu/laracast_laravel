@@ -23,8 +23,10 @@
         </label>
     </form>
     
-    @endforeach
-    
+    @endforeach    
+</div>
+@endif
+<div>
     <form method="POST" action="{{url('/projects/'.$project->id.'/tasks')}}">
         <div>
         @csrf
@@ -43,6 +45,5 @@
     @include('projects.errors')
     
 </div>
-@endif
 
 @endsection
