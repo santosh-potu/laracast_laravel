@@ -14,6 +14,7 @@ Route::get('/', function(){
     return view('welcome');
 });
 
+Route::get('/post/{post}','PostController@show');
 //Route::get('/signup','HomeController@index')->middleware('guest');
 
 Route::get('/my', 'PagesController@home');
