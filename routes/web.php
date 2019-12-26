@@ -13,8 +13,15 @@
 Route::get('/', function(){
     return view('welcome');
 });
-
+Route::get('/aboutus',function(){
+    
+    return view('aboutus',
+            [ 'articles' => App\Article::take(3)->latest()->get()]);
+});
 Route::get('/post/{post}','PostController@show');
+Route::get('/articles/{article}','ArticlesController@show');
+Route::get('/articles','ArticlesController@index');
+
 //Route::get('/signup','HomeController@index')->middleware('guest');
 
 Route::get('/my', 'PagesController@home');
