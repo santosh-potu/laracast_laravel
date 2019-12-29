@@ -19,9 +19,13 @@ Route::get('/aboutus',function(){
             [ 'articles' => App\Article::take(3)->latest()->get()]);
 });
 Route::get('/post/{post}','PostController@show');
-Route::get('/articles/{article}','ArticlesController@show');
-Route::get('/articles','ArticlesController@index');
 
+Route::get('/articles','ArticlesController@index');
+Route::post('/articles','ArticlesController@store');
+Route::get('/articles/create','ArticlesController@create');
+Route::get('/articles/{article}','ArticlesController@show')->name('articles.show');
+Route::get('/articles/{article}/edit','ArticlesController@edit');
+Route::put('/articles/{article}','ArticlesController@update');
 //Route::get('/signup','HomeController@index')->middleware('guest');
 
 Route::get('/my', 'PagesController@home');

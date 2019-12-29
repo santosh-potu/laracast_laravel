@@ -6,7 +6,7 @@
 		<div id="content">
                     @foreach($articles as $article)
 			<div class="title">
-                            <h2><a href='{{url("articles/".$article->id)}}'>{{$article->title}}</a></h2>
+                            <h2><a href='{{route("articles.show",$article)}}'>{{$article->title}}</a></h2>
 				<span class="byline">{{$article->excerpt}}</span> </div>
 			<p><img src="{{asset('images/banner.jpg')}}" alt="" class="image image-full" /> </p>
                     @endforeach

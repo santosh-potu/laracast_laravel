@@ -20,6 +20,7 @@ Released   : 20140225
 <link href="{{asset('/css/default.css')}}" rel="stylesheet" type="text/css" media="all" />
 <link href="{{asset('/css/fonts.css')}}" rel="stylesheet" type="text/css" media="all" />
 
+@yield('head')
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
 </head>
@@ -34,7 +35,7 @@ Released   : 20140225
 				<li class="{{Request::path() == '/'?"current_page_item":""}}"><a href="{{url('/')}}" accesskey="1" title="">Homepage</a></li>
 				<li class="{{Request::path() == 'clients'?"current_page_item":""}}"><a href="#" accesskey="2" title="">Our Clients</a></li>
 				<li class="{{Request::path() == 'aboutus'?"current_page_item":""}}"><a href="{{url('aboutus')}}" accesskey="3" title="">About Us</a></li>
-				<li class="{{Request::path() == 'articles'?"current_page_item":""}}"><a href="#" accesskey="4" title="">Articles</a></li>
+				<li class="{{Request::path() == 'articles'?"current_page_item":""}}"><a href="{{url('articles')}}" accesskey="4" title="">Articles</a></li>
 				<li class="{{Request::path() == 'contact'?"current_page_item":""}}"><a href="#" accesskey="5" title="">Contact Us</a></li>
 			</ul>
 		</div>
