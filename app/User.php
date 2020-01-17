@@ -45,4 +45,8 @@ class User extends Authenticatable
         return $this->hasOne(\App\Team::class); 
 
     }
+    
+    public function articles(){
+        return $this->hasMany(Article::class);
+    }
 }
